@@ -25,16 +25,15 @@ class solution:
             self.stackNode.append(root)
             self.inorderProcess(root.left)
 
-        else:#当没有左子节点时，则出栈一个节点
+        else:#当没有左子节点时，则出栈一个节点，
             '''
             最困惑的一点：当右边节点为空时，并不会结束遍历，会直接出栈一个节点，继续遍历；右边节点不为空时则将右子树当成根节点来遍历
                         然后出栈，接着遍历回根节点，完成中序遍历
             '''
-            if len(self.stackNode) != 0:
+            if len(self.stackNode) != 0:#栈空了则结束遍历
                 b = self.stackNode.pop()
                 self.record.append(b.val)
-
-                self.inorderProcess(b.right)
+                self.inorderProcess(b.right)#会遍历出栈那个节点的右节点
 
 
 
