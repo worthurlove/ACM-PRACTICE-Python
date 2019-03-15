@@ -10,7 +10,8 @@ class TreeNode:
         self.right = None
         self.left = None
 
-class solution: 
+#递归方法遍历
+class recrsionSolution: 
     def __init__(self):
         self.record = []
 
@@ -28,6 +29,33 @@ class solution:
 
             self.preorderProcess(root.right)#访问右节点
 
+        else:
+            return
+
+#使用栈的非递归方法
+class noRecrsionSolutopn:
+    def preorderTraversal(self,root):
+
+        if not root:#节点为空则直接返回
+            return []
+
+        stackNode = [root]
+        record = []
+
+        while stackNode:
+
+            #出栈，访问栈顶节点
+            a = stackNode.pop()
+            record.append(a.val)
+
+            #右节点先入栈，但是后出栈
+            if a.right:
+                stackNode.append(a.right)
+            #左节点后入栈，但是先出
+            if a.left:
+                stackNode.append(a.left)
+
+        return record
 
 
 
