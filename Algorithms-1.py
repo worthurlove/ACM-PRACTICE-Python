@@ -14,7 +14,19 @@ Date:2019.3.28
 
 J = input('输入J：')
 
+for i in J:
+    a = str(i)
+    if not a.isalpha():
+        print('输入非法：')
+        break
+
 S = input('输入S：')
+
+for i in S:
+    a = str(i)
+    if not a.isalpha():
+        print('输入非法：')
+        break
 
 def jewelsNum(J,S):
     num = 0
@@ -26,6 +38,8 @@ def jewelsNum(J,S):
     return num
 
 print(jewelsNum(J,S))
+
+
 
 #一行代码解决问题
 
