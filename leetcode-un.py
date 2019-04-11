@@ -1,5 +1,5 @@
 '''
-leetcode系列：题号-UNKNOWN
+leetcode系列：题号-79
 Description:Given a 2D	board	and	a	word,	find	if	the	word	
         exists	in	the	grid. The	word	can	be	constructed	
         from	letters	of	sequentially	adjacent	cell,	where	
@@ -61,8 +61,8 @@ def matchAlpha(i,j,t):
         
 
 def search(board,word):
-    for i in range(board.shape[0]):
-        for j in range(board.shape[1]):
+    for i in range(M):
+        for j in range(N):
             #匹配第一个字母后开始寻找
             if board[i][j] == word[0]:
                 t = 1
